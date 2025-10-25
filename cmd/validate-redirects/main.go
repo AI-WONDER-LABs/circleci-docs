@@ -88,6 +88,7 @@ func run(ctx context.Context, opts options) error {
 
 	g, ctx := errgroup.WithContext(ctx)
 	for _, r := range sliceRedirects {
+		r := r // capture loop variable
 		g.Go(func() (err error) {
 			return v.Validate(ctx, r)
 		})

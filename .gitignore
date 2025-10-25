@@ -11,3 +11,5 @@
 /.vscode/
 /.htmltest
 /test-reports
+/create-redirects
+/validate-redirects
