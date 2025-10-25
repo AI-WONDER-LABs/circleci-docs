@@ -82,6 +82,7 @@ func run(ctx context.Context, opts options) error {
 	u := newUploader(opts.Bucket, s3Client, concurrency)
 	g, ctx := errgroup.WithContext(ctx)
 	for _, r := range sliceRedirects {
+		r := r // capture loop variable
 		g.Go(func() (err error) {
 			return u.Upload(ctx, r)
 		})
